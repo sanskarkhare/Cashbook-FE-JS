@@ -6,7 +6,7 @@ import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 
 
 
-const CashInOutBtn: React.FC = () => {
+const CashInOutBtn = () => {
     return (
         <>
             <Wrapper>

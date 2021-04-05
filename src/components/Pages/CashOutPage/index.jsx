@@ -3,7 +3,7 @@ import { Wrapper, Label, Input, LabelWrapper } from './index.styles'
 
 const CashOutPage = () => {
 
-   const onSubmit = (e : any) => {
+   const onSubmit = (e) => {
         e.preventDefault();
         window.location.pathname='/';
    }

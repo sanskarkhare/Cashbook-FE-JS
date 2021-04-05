@@ -3,32 +3,9 @@ import axios from 'axios';
 import { AppReducer } from './AppReducer';
 
 
+const AppContext = createContext(initialState)
 
-
-export type MyState = {
-    transactions: Array<{id: number, amount: number, remark: string|null}>,
-    error: string|null,
-    loading: boolean,
-}
-
-export const initialState: MyState = {
-    transactions: [],
-    error: null,
-    loading: true,
-}
-
-type MyFunction = {
-    getTransactions: () => Promise<void>,
-    addTransactions: (transaction: any) => Promise<void>
-}
-
-// const AppContext = createContext<{state: MyState; dispatch: React.Dispatch<any>}>({
-//     state: initialState, dispatch: () => null
-// });
-
-const AppContext = createContext<any>(initialState)
-
-export const AppProvider: React.FC = ({ children }) => {
+export const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState)
 
     async function getTransactions() {
@@ -48,7 +25,7 @@ export const AppProvider: React.FC = ({ children }) => {
         }
     }
 
-    async function deleteTransaction(id: number) {
+    async function deleteTransaction(id) {
 
     
         try {
@@ -67,7 +44,7 @@ export const AppProvider: React.FC = ({ children }) => {
         }
 }
 
-    async function addTransactions(transaction: any) {
+    async function addTransactions(transaction) {
 
         const config = {
             headers: {

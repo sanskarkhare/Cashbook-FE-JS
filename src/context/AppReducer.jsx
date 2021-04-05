@@ -1,12 +1,7 @@
 import React, { useReducer } from 'react';
-import { initialState, MyState } from './GlobalState'
-
-type MyAction = 
-    | { type: 'GET_TRANSACTIONS' | 'TRANSACTION_ERROR' | 'ADD_TRANSACTIONS' | 'DELETE_TRANSACTION'; payload: any }
 
 
-
-export const AppReducer =  (state: MyState , action: MyAction) => {
+export const AppReducer =  (state, action) => {
     switch(action.type){
 
         case 'GET_TRANSACTIONS' :
@@ -31,7 +26,7 @@ export const AppReducer =  (state: MyState , action: MyAction) => {
         case 'DELETE_TRANSACTION': 
             return {
                 ...state,
-                transactions: state.transactions.filter((transaction: any) => transaction._id !== action.payload)
+                transactions: state.transactions.filter(transaction => transaction._id !== action.payload)
             }
 
         default: 

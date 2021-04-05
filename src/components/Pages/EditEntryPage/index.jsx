@@ -6,7 +6,7 @@ import AppContext from '../../../context/GlobalState';
 
 
 
-const EditEntry:React.FC = () => {
+const EditEntry = () => {
     const { transactions } = useContext(AppContext);
     const { amount, remark } = transactions;
 

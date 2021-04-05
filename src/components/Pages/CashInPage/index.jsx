@@ -6,10 +6,10 @@ const CashInPage = () => {
 
     const { addTransactions } = useContext(AppContext);
 
-    const [amount, setAmount] = useState<number>(0);
-    const [remark, setRemark] = useState<any>('');
+    const [amount, setAmount] = useState(0);
+    const [remark, setRemark] = useState('');
 
-   const onSubmit = (e : React.FormEvent<HTMLFormElement>) => {
+   const onSubmit = (e) => {
         e.preventDefault();
 
         const newTransaction = {
@@ -28,11 +28,11 @@ const CashInPage = () => {
              <Wrapper>
                 <LabelWrapper>
                     <Label>Amount: </Label>
-                    <Input value={amount} onChange={(e: any) => setAmount(e.target.value)} type="number" placeholder="Enter Amount..."></Input>
+                    <Input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" placeholder="Enter Amount..."></Input>
                 </LabelWrapper>
                 <LabelWrapper>
                     <Label>Remark: </Label>
-                    <Input value={remark} type="text" onChange={(e: any) => setRemark(e.target.value)} placeholder="Enter remark..."></Input>
+                    <Input value={remark} type="text" onChange={(e) => setRemark(e.target.value)} placeholder="Enter remark..."></Input>
                 </LabelWrapper>
 
                <SaveBtn type='submit'>Save</SaveBtn>

@@ -8,7 +8,7 @@ import { MdDelete } from 'react-icons/md';
 
 
 
-const History: React.FC = ({children}) => {
+const History = ({children}) => {
     let history = useHistory();
        
     const { transactions, getTransactions, loading } = useContext(AppContext)
@@ -28,7 +28,7 @@ const History: React.FC = ({children}) => {
             </HeaderWrapper>
         {loading ? (<h1>Loading...</h1>) : (
         <>
-            {transactions.map((transaction: any) => (
+            {transactions.map(transaction => (
                 
                 
                 
