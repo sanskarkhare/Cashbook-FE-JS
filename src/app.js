@@ -6,6 +6,7 @@ import CashOutPage from './components/Pages/CashOutPage';
 import { AppProvider } from './context/GlobalState'
 import EditEntry from './components/Pages/EditEntryPage';
 import PageNotFound from './PageNotFound';
+import Heading from './components/Heading/index';
 
 
 
@@ -15,6 +16,7 @@ const App = () => {
     <>
       
      <AppProvider>
+                  <Heading />
           <Router>
               <Switch>
                   <Route path="/"  exact render={() => <HomePage />} />
@@ -22,7 +24,6 @@ const App = () => {
                   <Route path="/CashInPage" exact render={() => <CashInPage />} />
                   <Route path="/CashOutPage" exact render={() => <CashOutPage />} />
                   <Route path="/*" exact render={() => <PageNotFound />} />
-
               </Switch>
             </Router>
       </AppProvider>

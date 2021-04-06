@@ -1,10 +1,23 @@
-import React from 'react'
-import { Wrapper, Label, Input, LabelWrapper } from './index.styles'
+import React, { useState, useContext } from 'react';
+import { Wrapper, Label, Input, LabelWrapper, SaveBtn } from './index.styles';
+import AppContext from '../../../context/GlobalState';
 
 const CashOutPage = () => {
 
+    const { addTransactions } = useContext(AppContext);
+
+    const [amount, setAmount] = useState(0);
+    const [remark, setRemark] = useState('');
+
    const onSubmit = (e) => {
         e.preventDefault();
+
+        const newTransaction = {
+            id: Math.floor(Math.random() * 100000000),
+            amount: -amount,
+            remark,
+        }
+        addTransactions(newTransaction)
         window.location.pathname='/';
    }
 
@@ -12,21 +25,20 @@ const CashOutPage = () => {
         <>
 
          <form onSubmit={onSubmit}>
-             
              <Wrapper>
                 <LabelWrapper>
-                    <Label>-Amount: </Label>
-                    <Input type="number"></Input>
+                    <Label>Amount: </Label>
+                    <Input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" placeholder="Enter Amount..."></Input>
                 </LabelWrapper>
                 <LabelWrapper>
                     <Label>Remark: </Label>
-                    <Input type="text"></Input>
+                    <Input value={remark} type="text" onChange={(e) => setRemark(e.target.value)} placeholder="Enter remark..."></Input>
                 </LabelWrapper>
 
-               <button type='submit'>Save</button>
+               <SaveBtn type='submit'>Save</SaveBtn>
              </Wrapper>
-             
-         </form>
+          </form>
+
         </>
     )
 }

@@ -1,14 +1,13 @@
 import React, { useContext, useEffect } from 'react';
 import AppContext from '../../context/GlobalState';
-import { ParaRemark, ParaWrapper,ParaAmount, Wrapper, HeaderWrapper, Hr, ButtonWrapper } from './index.styles';
+import { ParaRemark, ParaWrapper,ParaAmount, Wrapper, HeaderWrapper, Hr, H1, PWrapper } from './index.styles';
 import { useHistory } from 'react-router-dom';
-import { MdDelete } from 'react-icons/md';
 
 
 
 
 
-const History = ({children}) => {
+const History = () => {
     let history = useHistory();
        
     const { transactions, getTransactions, loading } = useContext(AppContext)
@@ -22,23 +21,22 @@ const History = ({children}) => {
 
     <Wrapper>
             <HeaderWrapper>
-               <h2>Remark</h2>
+               <H1>Remark</H1>
                <Hr />
-               <h2>Amount</h2>
+               <H1>Amount</H1>
             </HeaderWrapper>
         {loading ? (<h1>Loading...</h1>) : (
         <>
             {transactions.map(transaction => (
                 
                 
-                
-                <div key={transaction._id} className='HistoryDiv'> 
+                <div key={transaction._id} className='Div'> 
 
-                    <ParaWrapper onClick={() => history.push(`/EditEntryPage/${transaction._id}`)}>
+                <ParaWrapper onClick={() => history.push(`/EditEntryPage/${transaction._id}`)}>
                         <ParaRemark>{transaction.remark}</ParaRemark>
-                        <ParaAmount>{transaction.amount}</ParaAmount>
-                        {/* <ButtonWrapper><button><MdDelete /></button></ButtonWrapper> */}
-                    </ParaWrapper>
+                        <ParaAmount price={transaction.amount}>{transaction.amount}</ParaAmount> 
+                </ParaWrapper>
+
                     
                 </div>
                 

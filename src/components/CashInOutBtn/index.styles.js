@@ -29,5 +29,6 @@ export const Wrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: -5px 0 5px 0;
 
 `

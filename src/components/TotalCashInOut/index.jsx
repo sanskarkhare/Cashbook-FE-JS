@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Header, SignPara, AmountPara, HeaderAmountWrapper, Wrapper, BodyWrapper, SignParaMinus, Hr } from './index.styles';
-import GlobalProvider from '../../context/GlobalState';
+import AppContext from '../../context/GlobalState';
 
 
 const TotalCash = () => {
+
+    const { transactions } = useContext(AppContext);
+
+    const amounts = transactions.map(transaction => transaction.amount)
+    const CashIn = amounts.filter(item => item > 0).reduce((acc, item) => (acc += item), 0);
+    const CashOut = amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1;
+
+
     return (
         <>
             <BodyWrapper>
@@ -11,7 +19,7 @@ const TotalCash = () => {
                     <SignPara>+</SignPara>
                     <HeaderAmountWrapper>
                         <Header>Total Cash In</Header>
-                        <AmountPara>1000</AmountPara>
+                        <AmountPara>{CashIn}</AmountPara>
                     </HeaderAmountWrapper>
                 </Wrapper>
                     <Hr />
@@ -19,7 +27,7 @@ const TotalCash = () => {
                     <SignParaMinus>-</SignParaMinus>
                     <HeaderAmountWrapper>
                         <Header>Total Cash Out</Header>
-                        <AmountPara>1000</AmountPara>
+                        <AmountPara>{CashOut}</AmountPara>
                     </HeaderAmountWrapper>
                 </Wrapper>
            
