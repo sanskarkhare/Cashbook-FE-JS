@@ -55,10 +55,12 @@ export const SaveBtn = styled.button`
 `
 
 export const DeleteBtn = styled.button`
+    display: flex;
+    justify-content: center;
     cursor: pointer;
     outline: none;
     border: none;
-    color: #1c2841;
+    color: #ffffff;
     background: none;
     transition: all ease-in-out 0.3s;
 

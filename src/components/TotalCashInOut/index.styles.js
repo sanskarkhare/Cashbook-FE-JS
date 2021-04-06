@@ -21,7 +21,7 @@ export const SignParaMinus = styled(SignPara)`
 `
 
 export const Header = styled.header`
-    color: #555555;
+    color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 `
 
@@ -29,6 +29,7 @@ export const AmountPara = styled.p`
     font-size: 2rem;
     font-weight: 600;
     margin: 5px 0 0 5px;
+    color: #ffffff;
 `
 
 export const HeaderAmountWrapper = styled.div`

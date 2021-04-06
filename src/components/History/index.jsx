@@ -37,7 +37,7 @@ const History = ({children}) => {
                     <ParaWrapper onClick={() => history.push(`/EditEntryPage/${transaction._id}`)}>
                         <ParaRemark>{transaction.remark}</ParaRemark>
                         <ParaAmount>{transaction.amount}</ParaAmount>
-                        <ButtonWrapper><button><MdDelete /></button></ButtonWrapper>
+                        {/* <ButtonWrapper><button><MdDelete /></button></ButtonWrapper> */}
                     </ParaWrapper>
                     
                 </div>

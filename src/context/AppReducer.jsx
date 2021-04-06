@@ -28,6 +28,12 @@ export const AppReducer =  (state, action) => {
                 ...state,
                 transactions: state.transactions.filter(transaction => transaction._id !== action.payload)
             }
+        
+        case 'UPDATE_TRANSACTION':
+                return {
+                    ...state,
+                    transactions: [...state.transactions, action.payload]
+                }
 
         default: 
                 return state;

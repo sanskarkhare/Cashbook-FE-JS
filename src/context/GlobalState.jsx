@@ -2,6 +2,12 @@ import React, { useReducer, createContext } from 'react'
 import axios from 'axios';
 import { AppReducer } from './AppReducer';
 
+const initialState = {
+    transactions: [],
+    error: null,
+    loading: true,
+}
+
 
 const AppContext = createContext(initialState)
 
@@ -66,6 +72,25 @@ export const AppProvider = ({ children }) => {
                 payload: err.response.data.error,
             })
         }
+}
+
+async function updateTransaction(id, transaction) {
+
+    try {
+        
+        const res = await axios.put(`http://localhost:5000/${id}`, transaction)
+
+        dispatch({
+            type: 'UPDATE_TRANSACTION',
+            payload: res.data.data
+        })
+    }
+    catch(err) {
+        dispatch({
+            type: 'TRANSACTION_ERROR'  ,
+            payload: err.response.data.error,
+        })
+    }
 
 }
 
@@ -77,6 +102,7 @@ export const AppProvider = ({ children }) => {
                                      deleteTransaction,
                                      getTransactions,
                                      addTransactions,
+                                     updateTransaction,
                                      }}
         >
             {children}

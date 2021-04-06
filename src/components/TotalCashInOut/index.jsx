@@ -3,7 +3,7 @@ import { Header, SignPara, AmountPara, HeaderAmountWrapper, Wrapper, BodyWrapper
 import GlobalProvider from '../../context/GlobalState';
 
 
-const TotalCash: React.FC = () => {
+const TotalCash = () => {
     return (
         <>
             <BodyWrapper>
