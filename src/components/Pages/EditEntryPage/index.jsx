@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-import { Wrapper, Label, LabelWrapper, Input, SaveBtn, DeleteBtn } from './index.styles';
+import { Wrapper, Label, LabelWrapper, Input, SaveBtn, DeleteBtn, MyWrapper } from './index.styles';
 import { MdDelete } from 'react-icons/md';
 import AppContext from '../../../context/GlobalState';
 import { useHistory, useParams } from "react-router-dom";
@@ -29,7 +29,6 @@ const EditEntry = () => {
         loadUser();
       }, []);
 
-    
 
    const onSubmit = (e) => {
     e.preventDefault();
@@ -45,7 +44,7 @@ const EditEntry = () => {
 
     return (
         <>
-
+        <MyWrapper>
          <form onSubmit={onSubmit}>
              <Wrapper>
                 <DeleteBtn onClick={() =>  deleteTransaction(id)}><MdDelete size={50}/></DeleteBtn>
@@ -61,7 +60,7 @@ const EditEntry = () => {
                <SaveBtn type='submit'>Update</SaveBtn>
              </Wrapper>
           </form>
-
+          </MyWrapper>
         </>
     )
 }

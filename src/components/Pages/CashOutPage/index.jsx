@@ -16,6 +16,7 @@ const CashOutPage = () => {
             id: Math.floor(Math.random() * 100000000),
             amount: -amount,
             remark,
+            date: new Date(),
         }
         addTransactions(newTransaction)
         window.location.pathname='/';

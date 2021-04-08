@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import AppContext from '../../context/GlobalState';
-import { ParaRemark, ParaWrapper,ParaAmount, Wrapper, HeaderWrapper, Hr, H1, PWrapper } from './index.styles';
+import { ParaAmount, Wrapper, HeaderWrapper, Hr, H3, ParaDate, RemarkDateWrapper, UL, LI, ParaRemark, ULWrapper } from './index.styles';
 import { useHistory } from 'react-router-dom';
 
 
@@ -18,32 +18,53 @@ const History = () => {
 
     return (
         <>
-
-    <Wrapper>
+        <Wrapper>
             <HeaderWrapper>
-               <H1>Remark</H1>
+               <H3>Details</H3>
                <Hr />
-               <H1>Amount</H1>
+               <H3>Amount</H3>
             </HeaderWrapper>
         {loading ? (<h1>Loading...</h1>) : (
+           
         <>
-            {transactions.map(transaction => (
-                
-                
-                <div key={transaction._id} className='Div'> 
+           
+            
+                <ULWrapper>
+                    {transactions.map(transaction => (
+                    
+                    
+                    <div key={transaction._id} className="Div"> 
+                        <LI onClick={() => history.push(`/EditEntryPage/${transaction._id}`)}>
+                        <RemarkDateWrapper>
 
-                <ParaWrapper onClick={() => history.push(`/EditEntryPage/${transaction._id}`)}>
-                        <ParaRemark>{transaction.remark}</ParaRemark>
-                        <ParaAmount price={transaction.amount}>{transaction.amount}</ParaAmount> 
-                </ParaWrapper>
+                        <ParaDate>{new Date(transaction.date).toLocaleString(undefined, {
+                                day:    'numeric',
+                                month:  'short',
+                                hour:   '2-digit',
+                                minute: '2-digit',
+                            })}
+                        </ParaDate>
+                        <ParaRemark>
+                        {transaction.remark}
+                        </ParaRemark>
+                            </RemarkDateWrapper>
+
+                            <span><ParaAmount price={transaction.amount}>{transaction.amount < 0 ? transaction.amount * -1: transaction.amount}</ParaAmount></span> 
+                        </LI>
+                    </div>
+                    
+                
+                    ))}
+
+                </ULWrapper>
 
                     
-                </div>
+              
                 
-            ))}
+            
         </>
         )}
-    </Wrapper>
+        </Wrapper>
         </>
     )
 }
@@ -51,3 +72,16 @@ const History = () => {
 export default History;
 
 
+{/* <ParaWrapper onClick={() => history.push(`/EditEntryPage/${transaction._id}`)}>
+                    <RemarkDateWrapper>
+                        <ParaDate>{new Date(transaction.date).toLocaleString(undefined, {
+                                day:    'numeric',
+                                month:  'short',
+                                hour:   '2-digit',
+                                minute: '2-digit',
+                            })}
+                        </ParaDate>
+                        <ParaRemark>{transaction.remark}</ParaRemark>
+                    </RemarkDateWrapper>
+                        <ParaAmount price={transaction.amount}>{transaction.amount}</ParaAmount> 
+                </ParaWrapper> */}

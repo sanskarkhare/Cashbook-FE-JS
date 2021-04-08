@@ -1,5 +1,5 @@
 import React from 'react'
-import { InBtn, OutBtn, Wrapper } from './index.styles';
+import { InBtn, OutBtn, Wrapper, MyWrapper } from './index.styles';
 import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 
 
@@ -9,6 +9,7 @@ import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 const CashInOutBtn = () => {
     return (
         <>
+        <MyWrapper>
             <Wrapper>
                 <InBtn onClick={() => (window.location.pathname='/CashInPage')}>
                     <ImArrowUp />
@@ -20,6 +21,7 @@ const CashInOutBtn = () => {
                     Cash Out
                 </OutBtn>
             </Wrapper>
+        </MyWrapper>
         </>
     )
 }

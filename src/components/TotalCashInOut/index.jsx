@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Header, SignPara, AmountPara, HeaderAmountWrapper, Wrapper, BodyWrapper, SignParaMinus, Hr } from './index.styles';
+import { Header, SignPara, AmountPara, HeaderAmountWrapper, Wrapper, BodyWrapper, SignParaMinus, Hr, MyWrapper} from './index.styles';
 import AppContext from '../../context/GlobalState';
 
 
@@ -14,6 +14,7 @@ const TotalCash = () => {
 
     return (
         <>
+            <MyWrapper>
             <BodyWrapper>
                 <Wrapper>
                     <SignPara>+</SignPara>
@@ -32,7 +33,7 @@ const TotalCash = () => {
                 </Wrapper>
            
             </BodyWrapper>
-            
+            </MyWrapper>
         </>
     )
 }

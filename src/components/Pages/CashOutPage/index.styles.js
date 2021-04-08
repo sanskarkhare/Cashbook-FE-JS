@@ -5,8 +5,13 @@ export const Wrapper = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
+
+    @media (max-width: 900px) {
+        height: 95vh;
+        width: 100vw;
+    }
 `
 
 export const LabelWrapper = styled.div`
@@ -16,6 +21,12 @@ export const LabelWrapper = styled.div`
 
 export const Label = styled.label`
     color: #6a5acd;
+    font-size: 1.5rem;
+
+    @media (max-width: 500px) {
+        
+        font-size: .9rem;
+    }
 `
 
 export const Input = styled.input`
@@ -24,7 +35,13 @@ export const Input = styled.input`
     outline: none;
     border: 2px solid #cccccc;
     font-size: 1.2rem;
-   
+
+    @media (max-width: 500px) {
+            font-size: .8rem;
+    }
+    @media (max-width: 450px) {
+            width: 20vw;
+    }
 `
 export const SaveBtn = styled.button`
     display: flex;
@@ -44,5 +61,30 @@ export const SaveBtn = styled.button`
     transition: all .3s ease-in-out;
     &:hover {
         transform: scale(1.1);
+    }
+
+    @media (max-width: 1100px) {
+            height: 4rem;
+            width: 12rem;
+    }
+
+    @media (max-width: 900px) {
+            height: 4rem;
+    }
+
+    @media (max-width: 700px) {
+            height: 3rem;
+            width: 8rem;
+            font-size: 1.4rem
+    }
+    @media (max-width: 500px) {
+            height: 2.5rem;
+            width: 6.5rem;
+            font-size: 1rem;
+    }
+    @media (max-width: 350px) {
+            height: 2.2rem;
+            width: 6rem;
+            font-size: .8rem;
     }
 `

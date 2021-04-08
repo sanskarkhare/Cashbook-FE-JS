@@ -1,12 +1,19 @@
 import styled from 'styled-components';
 
+export const MyWrapper = styled.div`
+    /* height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0; */
+`
+
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: 92vh;
+    width: 100%;
 
     > h1 {
         font-family: sans-serif;
@@ -14,7 +21,13 @@ export const Wrapper = styled.div`
         color: #323232;
         margin-top: 0;
     }
-`
+
+    @media (max-width: 900px) {
+        height: 95vh;
+        width: 95%;
+        
+    }
+`;
 
 export const LabelWrapper = styled.div`
     display: flex;
@@ -23,6 +36,11 @@ export const LabelWrapper = styled.div`
 
 export const Label = styled.label`
     color: #6a5acd;
+
+    @media (max-width: 500px) {
+        
+        font-size: .9rem;
+}
 `
 
 export const Input = styled.input`
@@ -31,6 +49,13 @@ export const Input = styled.input`
     outline: none;
     border: 2px solid #cccccc;
     font-size: 1.2rem;
+
+    @media (max-width: 500px) {
+            font-size: .8rem;
+    }
+    @media (max-width: 450px) {
+            width: 20vw;
+    }
    
 `
 export const SaveBtn = styled.button`
@@ -52,6 +77,31 @@ export const SaveBtn = styled.button`
     &:hover {
         transform: scale(1.1);
     }
+
+    @media (max-width: 1100px) {
+            height: 4rem;
+            width: 12rem;
+    }
+
+    @media (max-width: 900px) {
+            height: 4rem;
+    }
+    
+    @media (max-width: 700px) {
+            height: 3rem;
+            width: 8rem;
+            font-size: 1.4rem
+    }
+    @media (max-width: 500px) {
+            height: 2.5rem;
+            width: 6.5rem;
+            font-size: 1rem;
+    }
+    @media (max-width: 350px) {
+            height: 2.2rem;
+            width: 6rem;
+            font-size: .8rem;
+    }
 `
 
 export const DeleteBtn = styled.button`
@@ -60,7 +110,7 @@ export const DeleteBtn = styled.button`
     cursor: pointer;
     outline: none;
     border: none;
-    color: #ffffff;
+    color: #191919;
     background: none;
     transition: all ease-in-out 0.3s;
 
