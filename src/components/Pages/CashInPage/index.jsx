@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { Wrapper, Label, Input, LabelWrapper, SaveBtn } from './index.styles';
 import AppContext from '../../../context/GlobalState';
+import BasicDatePicker from '../../DTPicker/DTPicker';
 
 const CashInPage = () => {
 
@@ -8,6 +9,8 @@ const CashInPage = () => {
 
     const [amount, setAmount] = useState(0);
     const [remark, setRemark] = useState('');
+    const [selectedDate, handleDateChange] = useState(new Date());
+    // console.log(selectedDate);
 
    const onSubmit = (e) => {
         e.preventDefault();
@@ -16,7 +19,7 @@ const CashInPage = () => {
             id: Math.floor(Math.random() * 100000000),
             amount,
             remark,
-            date: new Date()
+            date: selectedDate
         }
         addTransactions(newTransaction)
         window.location.pathname='/';
@@ -27,6 +30,7 @@ const CashInPage = () => {
 
          <form onSubmit={onSubmit}>
              <Wrapper>
+             <BasicDatePicker selectedDate={selectedDate} handleDateChange={handleDateChange} />
                 <LabelWrapper>
                     <Label>Amount: </Label>
                     <Input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" placeholder="Enter Amount..."></Input>

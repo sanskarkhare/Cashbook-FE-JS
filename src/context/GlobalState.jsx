@@ -91,7 +91,6 @@ async function updateTransaction(id, transaction) {
             payload: err.response.data.error,
         })
     }
-
 }
 
 
@@ -103,7 +102,7 @@ async function updateTransaction(id, transaction) {
                                      getTransactions,
                                      addTransactions,
                                      updateTransaction,
-                                     }}
+                                    }}
         >
             {children}
         </AppContext.Provider>

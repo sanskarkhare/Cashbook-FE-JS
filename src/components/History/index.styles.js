@@ -65,6 +65,9 @@ export const ParaDate = styled.p`
     /* margin: 0 5rem 0 0; */
     /* display: flex;
     flex: 30% */
+    @media (max-width: 1300px) {
+        margin: 4px 0 0 -8rem;
+    }
 
     @media (max-width: 850px) {
         margin: 4px 8rem 0 -1rem;

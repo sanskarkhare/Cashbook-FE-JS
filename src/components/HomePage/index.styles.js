@@ -19,11 +19,10 @@ export const Wrapper = styled.div`
   justify-content: center !important;
   height: 82vh;
             width: 100%;
-  /* @media (max-width: 1300px) {
-            height: 100vh;
-            width: 100%;
+  @media (max-width: 1300px) {
+           margin-top: 1rem;
             
-    } */
+    }
 /*      
         @media (max-width: 900px) {
             height: 90vh;
