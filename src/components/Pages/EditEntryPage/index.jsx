@@ -20,7 +20,7 @@ const EditEntry = () => {
     const [remark, setRemark] = useState('');
 
     const loadUser = async () => {
-        const res = await axios.get(`http://localhost:5000/${id}`)
+        const res = await axios.get(`https://dry-taiga-73724.herokuapp.com/${id}`)
         setAmount(res.data.data.amount);
         setRemark(res.data.data.remark)
     }
