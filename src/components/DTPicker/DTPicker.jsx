@@ -23,5 +23,4 @@ const BasicDatePicker = ({selectedDate, handleDateChange }) => {
     </>
   );
 }
-
 export default BasicDatePicker;

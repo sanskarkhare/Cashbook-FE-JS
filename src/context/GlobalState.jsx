@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
 
     async function getTransactions() {
         try {
-            const res = await axios.get('http://localhost:5000/');
+            const res = await axios.get('https://dry-taiga-73724.herokuapp.com/');
 
             dispatch({
                 type: 'GET_TRANSACTIONS',
@@ -35,7 +35,7 @@ export const AppProvider = ({ children }) => {
 
     
         try {
-            await axios.delete(`http://localhost:5000/${id}`);
+            await axios.delete(`https://dry-taiga-73724.herokuapp.com/${id}`);
 
             dispatch({
                 type: 'DELETE_TRANSACTION',
@@ -59,7 +59,7 @@ export const AppProvider = ({ children }) => {
         }
 
         try {
-            const res = await axios.post('http://localhost:5000/', transaction, config )
+            const res = await axios.post('https://dry-taiga-73724.herokuapp.com/', transaction, config )
 
             dispatch({
                 type: 'ADD_TRANSACTIONS',
@@ -78,7 +78,7 @@ async function updateTransaction(id, transaction) {
 
     try {
         
-        const res = await axios.put(`http://localhost:5000/${id}`, transaction)
+        const res = await axios.put(`https://dry-taiga-73724.herokuapp.com/${id}`, transaction)
 
         dispatch({
             type: 'UPDATE_TRANSACTION',
