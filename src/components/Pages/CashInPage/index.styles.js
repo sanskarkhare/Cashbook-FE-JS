@@ -88,4 +88,11 @@ export const SaveBtn = styled.button`
             width: 6rem;
             font-size: .8rem;
     }
-`
+`;
+
+// export const DateWrapper = styled.div`
+//         display: flex;
+//         justify-content: space-between;
+//         background: yellow;
+//         font-size: .5rem;
+// `;

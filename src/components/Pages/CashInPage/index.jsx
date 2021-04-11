@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Wrapper, Label, Input, LabelWrapper, SaveBtn } from './index.styles';
+import { Wrapper, Label, Input, LabelWrapper, SaveBtn, DateWrapper } from './index.styles';
 import AppContext from '../../../context/GlobalState';
 import BasicDatePicker from '../../DTPicker/DTPicker';
 
@@ -30,8 +30,8 @@ const CashInPage = () => {
 
          <form onSubmit={onSubmit}>
              <Wrapper>
-             <BasicDatePicker selectedDate={selectedDate} handleDateChange={handleDateChange} />
-                <LabelWrapper>
+                <BasicDatePicker selectedDate={selectedDate} handleDateChange={handleDateChange} />                
+               <LabelWrapper>
                     <Label>Amount: </Label>
                     <Input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" placeholder="Enter Amount..."></Input>
                 </LabelWrapper>

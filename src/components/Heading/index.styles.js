@@ -40,7 +40,7 @@ export const Wrapper = styled.div`
     }
 
     @media (max-width: 500px) {
-            margin: .3rem 0 -1.5rem 0;
+            margin: .3rem 0 1.5rem 0;
     }
     @media (max-width: 400px) {
             margin: .3rem 0 .8rem 0;

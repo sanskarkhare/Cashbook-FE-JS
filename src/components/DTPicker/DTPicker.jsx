@@ -9,14 +9,14 @@ const BasicDatePicker = ({selectedDate, handleDateChange }) => {
   return (
     <>
     <Wrapper>
-      <MuiPickersUtilsProvider utils={DateMomentUtils}>
+      <MuiPickersUtilsProvider utils={DateMomentUtils} >
             <DatePicker
-              label="Basic example"
+              label="Pick Date"
               value={selectedDate}
               onChange={date => handleDateChange(date)}
-              animateYearScrolling
+              animateYearScrolling className='DT'
             />
-            <TimePicker autoOk label="12 hours" value={selectedDate} onChange={handleDateChange} />
+            <TimePicker autoOk label="Pick Time" value={selectedDate} onChange={handleDateChange} className='TP'/>
 
       </MuiPickersUtilsProvider>
     </Wrapper>

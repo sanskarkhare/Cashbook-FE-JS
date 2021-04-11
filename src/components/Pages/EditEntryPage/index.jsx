@@ -36,7 +36,6 @@ const EditEntry = () => {
     const newTransaction = {
         amount,
         remark,
-        date: new Date()
     }
     updateTransaction(id, newTransaction)
     window.location.pathname='/';
